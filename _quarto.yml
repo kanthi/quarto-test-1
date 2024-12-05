@@ -20,11 +20,13 @@ book:
   chapters:
     - index.qmd
     - content/intro.qmd
-    - content/tech.qmd
-    - content/structure.qmd
-    - content/workflow.qmd
-    - content/template.qmd
-    - content/conclusion.qmd
+    - part: content/Linux/intro.qmd
+      chapters:
+         - content/Linux/commands.qmd
+    - part: content/DevOps/intro.qmd
+      chapters:
+         - content/DevOps/containers.qmd
+
 bibliography: other/references.bib
 
 format:
