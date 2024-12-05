@@ -1,0 +1,341 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  letterpaper,
+  paper=6in:9in,
+  pagesize=pdftex,
+  headinclude=on,
+  footinclude=on,
+  12pt]{scrbook}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+\areaset[0.50in]{4.5in}{8in}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Inhaltsverzeichnis}
+\else
+  \newcommand\contentsname{Inhaltsverzeichnis}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Abbildungsverzeichnis}
+\else
+  \newcommand\listfigurename{Abbildungsverzeichnis}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Tabellenverzeichnis}
+\else
+  \newcommand\listtablename{Tabellenverzeichnis}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Abbildung}
+\else
+  \newcommand\figurename{Abbildung}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabelle}
+\else
+  \newcommand\tablename{Tabelle}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{Listingverzeichnis}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{ngerman}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage[german]{selnolig} % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Book Title},
+  pdfauthor={Your Name},
+  pdflang={de},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Book Title}
+\author{Your Name}
+\date{2024-12-04}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{
+   showspaces = false,
+   showtabs = false,
+   breaksymbolleft={},
+   breaklines
+}
+
+\renewcommand*\contentsname{Inhaltsverzeichnis}
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\mainmatter
+\bookmarksetup{startatroot}
+
+\chapter*{Generating PDF Documents with Quarto, LaTeX, and GitHub
+Actions}\label{generating-pdf-documents-with-quarto-latex-and-github-actions}
+\addcontentsline{toc}{chapter}{Generating PDF Documents with Quarto,
+LaTeX, and GitHub Actions}
+
+\markboth{Generating PDF Documents with Quarto, LaTeX, and GitHub
+Actions}{Generating PDF Documents with Quarto, LaTeX, and GitHub
+Actions}
+
+\bookmarksetup{startatroot}
+
+\chapter{Introduction}\label{introduction}
+
+This document serves as a guide for a project designed to demonstrate
+the process of generating PDF documents from Markdown using Quarto and
+LaTeX. Additionally, it incorporates the use of GitHub Actions to
+automate the generation process and GitHub Releases for storing the
+final output. This repository has been structured as a GitHub Template,
+allowing it to be easily used as a starting point for any book project
+or documentation endeavor.
+
+\bookmarksetup{startatroot}
+
+\chapter{Overview of Technologies}\label{overview-of-technologies}
+
+Before diving into the process, let's briefly overview the key
+technologies used in this project:
+
+\subsection{Quarto}\label{quarto}
+
+Quarto is an open-source scientific and technical publishing system
+built on Pandoc. It allows users to convert documents written in
+Markdown, R Markdown, Jupyter, or Qmd to various formats including HTML,
+PDF, and EPUB.
+
+\subsection{LaTeX}\label{latex}
+
+LaTeX is a high-quality typesetting system; it includes features
+designed for the production of technical and scientific documentation.
+LaTeX is the de facto standard for the communication and publication of
+scientific documents.
+
+\subsection{GitHub Actions}\label{github-actions}
+
+GitHub Actions enables automation of all your software workflows, now
+with world-class CI/CD (Continuous Integration/Continuous Deployment).
+Build, test, and deploy your code right from GitHub.
+
+\subsection{GitHub Release}\label{github-release}
+
+GitHub Releases are a way to ship software to your users. It's a GitHub
+feature that makes it easy to bundle source code, release notes, and
+links to binary files for others to use.
+
+\bookmarksetup{startatroot}
+
+\chapter{Project Structure}\label{project-structure}
+
+The repository is structured as follows:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{content/}: This directory contains the Markdown files (.qmd or
+  .md) that make up the content of your book or document.
+\item
+  \texttt{.github/workflows/}: This directory contains the GitHub
+  Actions workflow files that automate the build process.
+\item
+  \texttt{\_quarto.yml}: The Quarto configuration file that specifies
+  how the Markdown should be converted to LaTeX and then to PDF. It also
+  can generate .docx and .epub files.
+\end{itemize}
+
+\bookmarksetup{startatroot}
+
+\chapter{Workflow}\label{workflow}
+
+The process of generating a PDF document from Markdown using this
+project/template involves the following steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Writing Content in Markdown}: Authors can write the content of
+  their book or document in Markdown, storing these files in the
+  \texttt{content/} directory.
+\item
+  \textbf{Configuring Quarto}: In the \texttt{\_quarto.yml} file,
+  authors specify the settings for Quarto to convert Markdown to LaTeX.
+  This includes configurations such as document title, author, date, and
+  LaTeX-specific settings.
+\item
+  \textbf{Commit, Tag and Push}: Add the changes \texttt{git\ add\ .},
+  commit them \texttt{git\ commit\ -m\ "your\ commit\ comment"}, create
+  a git tag \texttt{git\ tag\ -a\ v1.0.0\ -m\ "Release\ version\ 1.0.0"}
+  and push it \texttt{git\ push\ origin\ v1.0.0}.
+\item
+  \textbf{Using GitHub Actions for Automation}: When changes are pushed
+  with a git-tag to the repository, GitHub Actions, as defined in
+  \texttt{.github/workflows/}, automatically triggers the build process.
+  The workflow installs Quarto, checks out the repository content, and
+  runs the Quarto command to convert Markdown to LaTeX and then to PDF.
+\item
+  \textbf{Storing the Result with GitHub Release}: Once the PDF is
+  generated, the GitHub Actions workflow automatically creates a new
+  release and attaches the PDF document to it. This makes the document
+  accessible to users and provides version control for each release.
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{Using the Repository as a GitHub
+Template}\label{using-the-repository-as-a-github-template}
+
+To use this repository as a starting point for your book project, follow
+these steps:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Click on the `Use this template' button on the repository page.
+\item
+  Choose a name and description for your new repository and select
+  whether it should be public or private.
+\item
+  Click `Create repository from template' to create a new repository in
+  your account with the content and structure of this project.
+\end{enumerate}
+
+\bookmarksetup{startatroot}
+
+\chapter{Conclusion}\label{conclusion}
+
+This project provides a streamlined and automated approach to converting
+Markdown documents into professional-looking PDFs using Quarto, LaTeX,
+and GitHub Actions. By leveraging GitHub Releases, it also offers a
+convenient way to distribute and version-control the generated
+documents. As a GitHub Template, it is readily available for anyone
+looking to start a book project or any comprehensive documentation.
+
+
+\backmatter
+
+
+\end{document}
