@@ -6,14 +6,14 @@ metadata-files:
   - other/glossar.yml
 
 book:
-  title: "Book Title"
-  author: "Your Name"
+  title: "My Book Template"
+  author: "KING"
   date: "01.01.1970"
   search: true
-  repo-url: "https://github.com/simonwaldherr/BookTemplate"
+  repo-url: "https://github.com/kanthi/quarto-test-1"
   issued: "01.01.1970"
   language: "en-US"
-  isbn: "978-0-0000-0000-0"
+  #isbn: "978-0-0000-0000-0"
   image: "other/image.jpg"
   downloads: [pdf, epub]
   page-navigation: true
@@ -54,4 +54,3 @@ format:
   docx:
     toc: false
     lang: en-US
-
