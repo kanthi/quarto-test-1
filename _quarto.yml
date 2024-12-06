@@ -20,7 +20,7 @@ book:
   chapters:
     - index.qmd
     - content/intro.qmd
-    - part: content/Linux/intro.qmd
+    - part: "Linux"
       chapters:
          - content/Linux/commands.qmd
     - part: content/DevOps/intro.qmd
