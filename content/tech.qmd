@@ -1,4 +1,4 @@
-## Overview of Technologies
+## Overview of Technologies {.unnumbered}
 
 Before diving into the process, let's briefly overview the key technologies used in this project:
 

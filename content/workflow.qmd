@@ -1,4 +1,4 @@
-## Workflow
+## Workflow {.unnumbered}
 
 The process of generating a PDF document from Markdown using this project/template involves the following steps:
 

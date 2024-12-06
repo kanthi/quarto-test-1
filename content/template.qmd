@@ -1,4 +1,4 @@
-## Using the Repository as a GitHub Template
+## Using the Repository as a GitHub Template {.unnumbered}
 
 To use this repository as a starting point for your book project, follow these steps:
 
