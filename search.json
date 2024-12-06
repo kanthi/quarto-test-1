@@ -4,19 +4,19 @@
     "href": "index.html",
     "title": "Book Title",
     "section": "",
-    "text": "Generating PDF Documents with Quarto, LaTeX, and GitHub Actions",
+    "text": "KINGsNotese",
     "crumbs": [
-      "Generating PDF Documents with Quarto, LaTeX, and GitHub Actions"
+      "KINGsNotese"
     ]
   },
   {
     "objectID": "content/intro.html",
     "href": "content/intro.html",
-    "title": "1  Introduction To this template",
+    "title": "Introduction To this template",
     "section": "",
     "text": "This document serves as a guide for a project designed to demonstrate the process of generating PDF documents from Markdown using Quarto and LaTeX. Additionally, it incorporates the use of GitHub Actions to automate the generation process and GitHub Releases for storing the final output. This repository has been structured as a GitHub Template, allowing it to be easily used as a starting point for any book project or documentation endeavor.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction To this template</span>"
+      "Introduction To this template"
     ]
   },
   {
@@ -32,12 +32,12 @@
   {
     "objectID": "content/Linux/commands.html",
     "href": "content/Linux/commands.html",
-    "title": "2  Commands",
+    "title": "Commands",
     "section": "",
     "text": "This document serves as a guide for a project designed to demonstrate the process of generating PDF documents from Markdown using Quarto and LaTeX. Additionally, it incorporates the use of GitHub Actions to automate the generation process and GitHub Releases for storing the final output. This repository has been structured as a GitHub Template, allowing it to be easily used as a starting point for any book project or documentation endeavor.",
     "crumbs": [
       "Linux",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Commands</span>"
+      "Commands"
     ]
   },
   {
@@ -53,12 +53,12 @@
   {
     "objectID": "content/DevOps/containers.html",
     "href": "content/DevOps/containers.html",
-    "title": "3  Containers",
+    "title": "1  Containers",
     "section": "",
     "text": "This document serves as a guide for a project designed to demonstrate the process of generating PDF documents from Markdown using Quarto and LaTeX. Additionally, it incorporates the use of GitHub Actions to automate the generation process and GitHub Releases for storing the final output. This repository has been structured as a GitHub Template, allowing it to be easily used as a starting point for any book project or documentation endeavor.",
     "crumbs": [
       "DevOps",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Containers</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Containers</span>"
     ]
   }
 ]
