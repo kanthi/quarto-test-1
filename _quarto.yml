@@ -22,7 +22,10 @@ book:
     - content/intro.qmd
     - part: "Linux"
       chapters:
-         - content/Linux/commands.qmd
+         - content/Linux/Commands/intro.qmd
+    - part: "Info"
+      chapters:
+         - content/Linux/Commands/info/apropos.qmd
     - part: content/DevOps/intro.qmd
       chapters:
          - content/DevOps/containers.qmd
@@ -52,7 +55,4 @@ format:
     fig-pos: 'H'
   epub:
     toc: true
-    lang: en-US
-  docx:
-    toc: false
     lang: en-US
